@@ -37,14 +37,16 @@ class Home extends Component {
 
     return (
       <ul className="teams-list">
-        {teamsData.map(eachTeam => (
-          <TeamCard teamDetails={eachTeam} key={eachTeam.id} />
+        {/* FIX6: The list of team cards should be rendered using Array.map() method */}
+        {teamsData.map(team => (
+          <TeamCard teamDetails={team} key={team.id} />
         ))}
       </ul>
     )
   }
 
   renderLoader = () => (
+    // FIX7: For the purpose of testing here data-testid attribute should be added with the value "loader"
     <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
